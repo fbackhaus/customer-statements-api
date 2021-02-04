@@ -9,7 +9,7 @@ async function bootstrap() {
   const logger = new Logger('bootstrap');
 
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe({ forbidUnknownValues: true }));
+  app.useGlobalPipes(new ValidationPipe({ forbidUnknownValues: false }));
 
   const configService = app.get(ConfigService);
   const port = configService.get('server.port');
@@ -18,7 +18,7 @@ async function bootstrap() {
     .setTitle('Customer Statements API')
     .setDescription('Allows customers to generate a I&E statement')
     .setVersion('0.1')
-    .addTag('customers', 'Handles customers personal information')
+    .addTag('users', 'Handles customers personal information')
     .addTag('statemets', 'Handles customers I&E statements')
     .addTag('ping', 'Endpoint used to check the API health')
     .build();
