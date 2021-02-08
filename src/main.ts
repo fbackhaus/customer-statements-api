@@ -9,7 +9,7 @@ async function bootstrap() {
   const logger = new Logger('bootstrap');
 
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe({ forbidUnknownValues: false }));
+  app.useGlobalPipes(new ValidationPipe());
 
   const configService = app.get(ConfigService);
   const port = configService.get('server.port');
