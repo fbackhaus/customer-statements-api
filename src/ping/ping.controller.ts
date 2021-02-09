@@ -7,7 +7,7 @@ interface PingResponse {
 }
 
 @ApiTags('ping')
-@Controller()
+@Controller('ping')
 export class PingController {
   constructor(private pingService: PingService) {}
 

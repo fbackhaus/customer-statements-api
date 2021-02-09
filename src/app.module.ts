@@ -4,7 +4,6 @@ import configuration from './config/configuration';
 import { StatementsModule } from './statements/statements.module';
 import { PingModule } from './ping/ping.module';
 import { UsersModule } from './users/users.module';
-import { CryptModule } from './crypt/crypt.module';
 import { DatabaseModule } from './database/db.module';
 import * as Joi from 'joi';
 
@@ -24,7 +23,6 @@ import * as Joi from 'joi';
     StatementsModule,
     PingModule,
     UsersModule,
-    CryptModule,
   ],
 })
 export class AppModule {}
